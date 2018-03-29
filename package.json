@@ -1,0 +1,72 @@
+{
+  "name": "react-extensioner",
+  "version": "1.0.0",
+  "description": "",
+  "main": "release/index.js",
+  "scripts": {
+    "linter": "eslint --cache --color --ext .jsx,.js src",
+    "prettier-all": "prettier --config .prettierrc --write 'src/**/*.jsx' --write 'src/**/*.js'",
+    "prettier-changed": "git diff --name-only --diff-filter=ACMRTU HEAD | grep -e \".*\\.jsx$\" -e \".*\\.js$\" | xargs prettier --config .prettierrc --write",
+    "test": "mocha-webpack --require babel-register --require babel-polyfill --require init.test.js $(find src -type f  -name \"*spec.jsx\" -o -name \"*spec.js\" )",
+    "precommit": "lint-staged && npm run linter && npm test",
+    "build": "webpack --config webpack.babel.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uhlryk/react-extensioner.git"
+  },
+  "author": "Krzysztof Sztompka <sztompka.krzysztof@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/uhlryk/react-extensioner/issues"
+  },
+  "homepage": "https://github.com/uhlryk/react-extensioner#readme",
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.25.0",
+    "babel-eslint": "^8.0.0",
+    "babel-loader": "^7.1.1",
+    "babel-polyfill": "^6.23.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-es2016": "^6.24.1",
+    "babel-preset-es2017": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "babel-register": "^6.24.1",
+    "chai": "^4.0.2",
+    "chai-shallow-deep-equal": "^1.4.6",
+    "dirty-chai": "^2.0.1",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "eslint": "^4.7.2",
+    "eslint-config-prettier": "^2.5.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-mocha": "^4.11.0",
+    "eslint-plugin-node": "^5.1.1",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-react": "^7.7.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "husky": "^0.14.3",
+    "istanbul": "^1.1.0-alpha.1",
+    "lint-staged": "^6.0.0",
+    "mocha": "^3.4.2",
+    "mocha-webpack": "^1.1.0",
+    "plato": "^1.7.0",
+    "prettier": "^1.6.1",
+    "react": "^16.3.0",
+    "react-dom": "^16.3.0",
+    "sinon": "^2.3.6",
+    "sinon-chai": "^2.13.0",
+    "supertest": "^3.0.0",
+    "webpack": "^4.4.1",
+    "webpack-cli": "^2.0.13"
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --config .prettierrc --write",
+      "git add"
+    ]
+  }
+}
