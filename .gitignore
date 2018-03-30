@@ -2,7 +2,5 @@ node_modules
 .eslintcache
 src/main.prod.js
 src/main.prod.js.map
-dist
-release
 npm-debug.log
 coverage

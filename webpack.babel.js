@@ -1,3 +1,5 @@
+import path from "path";
+
 export default {
     devtool: "source-map",
 
@@ -5,7 +7,8 @@ export default {
 
     output: {
         libraryTarget: "umd",
-        filename: "./release/index.jsx"
+        filename: "index.js",
+        path: path.resolve(__dirname, "dist")
     },
     resolve: {
         extensions: [".js", ".jsx", ".json"]
