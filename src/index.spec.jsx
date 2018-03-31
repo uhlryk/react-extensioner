@@ -1,10 +1,10 @@
 import React from "react";
 import { ExtensionerProvider, ExtensionerEvent } from "./index.js";
 import { Manager } from "extensioner";
-xdescribe("base", () => {
+describe("base", () => {
     it("should render extension component", () => {
         const manager = new Manager();
-        manager.registerExtension({
+        manager.registerExtension("TEST_EXTENSION", {
             events: {
                 "TEST_EVENT": value => <div className="TEST_COMPONENT">{value}</div>
             }

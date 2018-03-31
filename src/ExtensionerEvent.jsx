@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import PropTypes from "prop-types";
 import ExtensionerManagerContext from "./ExtensionerManagerContext";
 
@@ -7,7 +7,7 @@ class ExtensionerEvent extends React.Component {
     render() {
         return (
             <ExtensionerManagerContext.Consumer>
-                {manager => manager.createEvent(this.props.name)(this.props.value)}
+                {manager => manager.createEvent(this.props.name)(this.props.value).map((component, index) => <Fragment key={index}>{component}</Fragment>)}
             </ExtensionerManagerContext.Consumer>
         );
     }

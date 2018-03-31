@@ -6,7 +6,6 @@ import ExtensionerManagerContext from "./ExtensionerManagerContext";
 class ExtensionerProvider extends React.Component {
 
     render() {
-        console.log(this.props);
         return (
             <ExtensionerManagerContext.Provider value={this.props.manager}>
                 {this.props.children}
