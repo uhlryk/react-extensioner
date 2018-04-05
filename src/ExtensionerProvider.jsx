@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Manager } from "extensioner";
 import ExtensionerManagerContext from "./ExtensionerManagerContext";
 
 class ExtensionerProvider extends React.Component {
@@ -15,7 +14,7 @@ class ExtensionerProvider extends React.Component {
 }
 
 ExtensionerProvider.propTypes = {
-    manager: PropTypes.instanceOf(Manager).isRequired,
+    manager: PropTypes.object.isRequired,
     children: PropTypes.oneOfType([
         PropTypes.arrayOf(PropTypes.node),
         PropTypes.node
