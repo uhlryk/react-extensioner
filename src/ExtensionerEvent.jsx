@@ -25,7 +25,7 @@ class ExtensionerEvent extends React.Component {
 
 ExtensionerEvent.propTypes = {
     name: PropTypes.string.isRequired,
-    value: PropTypes.any.isRequired
+    value: PropTypes.any
 };
 
 export default ExtensionerEvent;
