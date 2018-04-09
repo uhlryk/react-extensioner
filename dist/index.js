@@ -2004,7 +2004,7 @@ object-assign
 
                 ExtensionerEvent.propTypes = {
                     name: _propTypes2.default.string.isRequired,
-                    value: _propTypes2.default.any.isRequired
+                    value: _propTypes2.default.any
                 };
 
                 exports.default = ExtensionerEvent;
