@@ -1982,7 +1982,7 @@ object-assign
                                                 this.props.name,
                                                 _extensioner.syncMapCompose
                                             )(this.props.value)
-                                        ).map(({ extensionName, result }) =>
+                                        ).map(([extensionName, result]) =>
                                             _react2.default.createElement(
                                                 _react.Fragment,
                                                 {
