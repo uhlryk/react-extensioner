@@ -12,7 +12,7 @@ class ExtensionerEvent extends React.Component {
                         manager.createEvent(this.props.name, syncMapCompose)(
                             this.props.value
                         )
-                    ).map(({ extensionName, result }) => (
+                    ).map(([ extensionName, result ]) => (
                         <Fragment key={this.props.name + "_" + extensionName}>
                             {result}
                         </Fragment>
