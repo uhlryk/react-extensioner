@@ -8,7 +8,7 @@
     "prettier-all": "prettier --config .prettierrc --write 'src/**/*.jsx' --write 'src/**/*.js'",
     "prettier-changed": "git diff --name-only --diff-filter=ACMRTU HEAD | grep -e \".*\\.jsx$\" -e \".*\\.js$\" | xargs prettier --config .prettierrc --write",
     "test": "mocha-webpack --require babel-register --require init.test.js --webpack-config webpack.test.babel.js $(find src -type f  -name \"*spec.jsx\" -o -name \"*spec.js\" )",
-    "precommit": "lint-staged && npm run linter && npm test",
+    "precommit": "lint-staged && npm run build  && git add dist/  && npm run linter && npm test",
     "build": "webpack --config webpack.babel.js"
   },
   "repository": {
